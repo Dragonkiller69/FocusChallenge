@@ -10,12 +10,13 @@ template.innerHTML = /*html*/ `
          img {
             width: 20%;
             height: 20%;
+            border: 1px red solid;
             }
     </style>
      
 `;
 
-class CardComponent extends HTMLElement {
+export default class CardComponent extends HTMLElement {
 
     constructor() {
         super();
@@ -47,6 +48,7 @@ class CardComponent extends HTMLElement {
 
     set post(datos) {
         this._post = datos;
+        this.postdiv.innerText = datos;
     }
 
     get photosrc() {
@@ -60,4 +62,3 @@ class CardComponent extends HTMLElement {
 }
 
 customElements.define("card-component", CardComponent);
-export default CardComponent

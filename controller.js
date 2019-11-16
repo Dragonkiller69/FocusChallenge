@@ -1,11 +1,10 @@
 import CardComponent from './CardComponent.js'
 
-let usuarios;
 let content = document.querySelector('#content');
 async function get(uri) {
     let response = await fetch(uri);
-    let data = await response.json();
-    return data;
+    return await response.json();
+
 }
 
 get('https://jsonplaceholder.typicode.com/users')
@@ -19,9 +18,17 @@ get('https://jsonplaceholder.typicode.com/users')
                 let card = document.createElement('card-component');
                 get(`https://api.genderize.io/?name=${user.name.match(regex)}`)
                     .then(gender => {
-                        card.name = user.name;
-                        card.photosrc = `https://joeschmoe.io/api/v1/${gender.gender}/${user.name}`;
+                        if (gender !== null && gender !== undefined) {
+                            card.name = user.name;
+                            card.photosrc = `https://joeschmoe.io/api/v1/${gender.gender}/${user.name}`;
+                        }
                     })
+                get(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
+                    .then(posts => {
+                        posts.sort((a, b) => b.title.length - a.title.length);
+                        console.log(posts.map(post => post.title));
+                        card.post = posts.map(post => post.title)
+                    });
                 content.appendChild(card);
             });
 
