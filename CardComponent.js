@@ -2,19 +2,15 @@ const template = document.createElement('template');
 template.innerHTML = /*html*/ `
 
     <div id="card">
-    <div id="header">
-        <img src="" id="photo">
-        <label id="name"></label>
-    </div>
-        <div id="post">
-            
+        <div id="header">
+            <img src="" id="photo">
+            <label id="name"></label>
         </div>
+          <div id="post"></div>
     </div>
      <style>
          @import './main.css';
     </style>
-
-     
 `;
 
 export default class CardComponent extends HTMLElement {
@@ -26,10 +22,6 @@ export default class CardComponent extends HTMLElement {
         this.photo = this.root.querySelector('img');
         this.namediv = this.root.querySelector('#name');
         this.postdiv = this.root.querySelector('#post');
-    }
-
-    connectedCallback() {
-        console.log('se conecto');
     }
 
     fillTitles() {
@@ -45,7 +37,6 @@ export default class CardComponent extends HTMLElement {
     }
 
     set name(datos) {
-        this._name = datos;
         this.namediv.innerText = datos;
     }
 
@@ -63,7 +54,6 @@ export default class CardComponent extends HTMLElement {
     }
 
     set photosrc(datos) {
-        this._photosrc = datos;
         this.photo.setAttribute('src', datos);
     }
 }

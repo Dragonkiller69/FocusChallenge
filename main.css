@@ -1,11 +1,11 @@
     img {
-        width: 100px;
+        width: 80px;
         border: 1px red solid;
         display: inline-block;
     }
     
     #card {
-        width: 300px;
+        width: 225px;
         margin: 10px;
         display: inline-block;
     }
@@ -20,12 +20,9 @@
     }
     
     #header {
-        height: 110px;
-        max-height: 110px;
+        height: 90px;
         position: relative;
-        border: 1px solid black;
         text-align: justify;
-        vertical-align: middle;
     }
     
     #post {
@@ -44,5 +41,61 @@
     }
     
     body {
+        font-size: 9pt;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 100;
         text-align: center;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    
+    @media only screen and (max-width: 640px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto;
+        }
+        #card {
+            width: 90vw;
+        }
+        #post {
+            text-align: center;
+        }
+        #name {
+            margin-top: 25px;
+            font-weight: bold;
+            display: block;
+            position: static;
+        }
+        img {
+            text-align: center;
+            margin: 0px;
+        }
+        #header {
+            height: 20vh;
+            margin-bottom: 5vh;
+            text-align: center;
+            position: static;
+            margin-bottom: 0%;
+        }
+        span {
+            overflow: auto;
+            white-space: normal;
+            display: block;
+        }
+    }
+    
+    @media only screen and (min-width: 640px) and (max-width: 768px) {
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+    }
+    
+    @media only screen and (min-width: 1080px) {
+        #card {
+            width: 330px;
+        }
     }
