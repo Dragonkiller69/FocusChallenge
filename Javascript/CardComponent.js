@@ -3,13 +3,13 @@ template.innerHTML = /*html*/ `
 
     <div id="card">
         <div id="header">
-            <img src="" id="photo">
+            <img src="" id="photo" alt="Photo">
             <label id="name"></label>
         </div>
           <div id="post"></div>
     </div>
      <style>
-         @import './main.css';
+         @import '../Css/main.css';
     </style>
 `;
 

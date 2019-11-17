@@ -11,7 +11,6 @@ get('https://jsonplaceholder.typicode.com/users')
         if (data !== null && data !== undefined) {
             data.sort((a, b) => a.name.localeCompare(b.name));
             let regex = /[^\s.]+/;
-            console.log(data)
 
             data.forEach(user => {
                 let card = document.createElement('card-component');
