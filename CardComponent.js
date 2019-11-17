@@ -2,17 +2,23 @@ const template = document.createElement('template');
 template.innerHTML = /*html*/ `
 
     <div id="card">
+    <div id="header">
         <img src="" id="photo">
         <div id="name"></div>
-        <div id="post"></div>
+    </div>
+        <div id="post">
+            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
+            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
+            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
+            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
+            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
+
+        </div>
     </div>
      <style>
-         img {
-            width: 20%;
-            height: 20%;
-            border: 1px red solid;
-            }
+         @import './main.css';
     </style>
+
      
 `;
 

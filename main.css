@@ -1,4 +1,36 @@
 img {
-    width: 20%;
-    height: 20%;
+    width: 100px;
+    border: 1px red solid;
+    display: inline-block;
+}
+
+#card {
+    width: 30%;
+    display: inline-block;
+}
+
+#name {
+    display: inline-block;
+    font-weight: bold;
+}
+
+#header {
+    align-content: center;
+    text-align: center;
+    vertical-align: middle
+}
+
+#post {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+span:nth-child(even) {
+    color: red;
 }

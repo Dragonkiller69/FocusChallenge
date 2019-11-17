@@ -7,7 +7,17 @@ async function get(uri) {
 
 }
 
-get('https://jsonplaceholder.typicode.com/users')
+let card = document.querySelector('card-component');
+card.name = 'juan';
+card.photosrc = `https://joeschmoe.io/api/v1/male/jon`;
+/*get(`https://jsonplaceholder.typicode.com/posts?userId=1`)
+    .then(posts => {
+        posts.sort((a, b) => b.title.length - a.title.length);
+        console.log(posts.map(post => post.title));
+        card.post = posts.map(post => post.title)
+    });*/
+
+/*get('https://jsonplaceholder.typicode.com/users')
     .then(data => {
         if (data !== null && data !== undefined) {
             data.sort((a, b) => a.name.localeCompare(b.name));
@@ -18,9 +28,10 @@ get('https://jsonplaceholder.typicode.com/users')
                 let card = document.createElement('card-component');
                 get(`https://api.genderize.io/?name=${user.name.match(regex)}`)
                     .then(gender => {
+                        gender = 'female';
                         if (gender !== null && gender !== undefined) {
                             card.name = user.name;
-                            card.photosrc = `https://joeschmoe.io/api/v1/${gender.gender}/${user.name}`;
+                            card.photosrc = `https://joeschmoe.io/api/v1/${gender}/${user.name}`;
                         }
                     })
                 get(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
@@ -33,4 +44,4 @@ get('https://jsonplaceholder.typicode.com/users')
             });
 
         }
-    })
+    })*/
