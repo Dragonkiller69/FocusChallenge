@@ -1,36 +1,48 @@
-img {
-    width: 100px;
-    border: 1px red solid;
-    display: inline-block;
-}
-
-#card {
-    width: 30%;
-    display: inline-block;
-}
-
-#name {
-    display: inline-block;
-    font-weight: bold;
-}
-
-#header {
-    align-content: center;
-    text-align: center;
-    vertical-align: middle
-}
-
-#post {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-span:nth-child(even) {
-    color: red;
-}
+    img {
+        width: 100px;
+        border: 1px red solid;
+        display: inline-block;
+    }
+    
+    #card {
+        width: 300px;
+        margin: 10px;
+        display: inline-block;
+    }
+    
+    #name {
+        display: inline-block;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translateY(-50%);
+    }
+    
+    #header {
+        height: 110px;
+        max-height: 110px;
+        position: relative;
+        border: 1px solid black;
+        text-align: justify;
+        vertical-align: middle;
+    }
+    
+    #post {
+        text-align: justify;
+    }
+    
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+    }
+    
+    span:nth-child(even) {
+        color: red;
+    }
+    
+    body {
+        text-align: center;
+    }

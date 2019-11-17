@@ -4,15 +4,10 @@ template.innerHTML = /*html*/ `
     <div id="card">
     <div id="header">
         <img src="" id="photo">
-        <div id="name"></div>
+        <label id="name"></label>
     </div>
         <div id="post">
-            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
-            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
-            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
-            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
-            <span>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</span>
-
+            
         </div>
     </div>
      <style>
@@ -31,12 +26,18 @@ export default class CardComponent extends HTMLElement {
         this.photo = this.root.querySelector('img');
         this.namediv = this.root.querySelector('#name');
         this.postdiv = this.root.querySelector('#post');
-
-
     }
 
     connectedCallback() {
         console.log('se conecto');
+    }
+
+    fillTitles() {
+        this.post.forEach(title => {
+            let span = document.createElement('span');
+            span.innerText = title;
+            this.postdiv.appendChild(span);
+        })
     }
 
     get name() {
@@ -54,7 +55,7 @@ export default class CardComponent extends HTMLElement {
 
     set post(datos) {
         this._post = datos;
-        this.postdiv.innerText = datos;
+        this.fillTitles();
     }
 
     get photosrc() {
